@@ -1,0 +1,140 @@
+/* Main Container */
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Image */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* Gradient Overlay */
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8));
+}
+
+/* Left Content Section */
+.content-left {
+  display: flex;
+  width: 100%;
+  z-index: 3;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Hide scrollbar */
+  padding: 20px;
+}
+
+/* Scrollable Content */
+.content-left-scroll {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Match Content Section */
+.main-content-outer {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  z-index: 3;
+}
+
+/* Match Info */
+.live-match-outer {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  color: #fff;
+  
+}
+
+/* Match Logo */
+.nav-cat-logo {
+  position: absolute;
+  top: 20px; /* Adjust this value to move the logo a little lower */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+
+}
+
+.logo {
+  width: 150px;  /* Increase width */
+  height: auto;  /* Keep the aspect ratio */
+}
+
+/* Match Details */
+.match-details {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.match-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.match-details p {
+  font-size: 16px;
+}
+.nav-cat-logo {
+  position: absolute;
+  top: 20px; /* Position the logo */
+  left: 40%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circular icons */
+.icon-right {
+  width: 90px;  /* Set size for the circular icon */
+  height: 90px; /* Set size for the circular icon */
+  border-radius: 50%;  /* Makes it circular */
+  background-color: #fff; /* Optional: set background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 140px;  /* Adjust to place it below the logo */
+  z-index: 2;
+}
+.logo {
+  width: 200px;  /* Increase width */
+  height: auto;  /* Keep the aspect ratio */
+}
+
+.card {
+  left: 10%; /* Move ProfileCard 20px to the left */
+}
+.icon-right {
+  right: 35%; /* Position the right icon */
+}
