@@ -50,22 +50,36 @@
 
 /* Match Content Section */
 .main-content-outer {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  z-index: 3;
+  display: flex
+  ;
+      flex-shrink: 1;
+      width: 100%;
+      z-index: 2;
 }
 
 /* Match Info */
 .live-match-outer {
   width: 100%;
-  max-width: 900px;
-  padding: 20px;
-  display: flex;
+  max-width: 825px;
+  padding: 12px;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 36px auto;
   color: #fff;
   
 }
-
+.live-match-inner{
+  display: grid
+;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 200px;
+    width: 100%;
+    max-width: 575px;
+    margin-top: 30px;
+}
 /* Match Logo */
 .nav-cat-logo {
   position: absolute;
@@ -102,39 +116,208 @@
   font-size: 16px;
 }
 .nav-cat-logo {
-  position: absolute;
-  top: 20px; /* Position the logo */
-  left: 40%;
-  transform: translateX(-50%);
   width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-  flex-direction: column;
-  align-items: center;
+    max-width: 825px;
+    padding: 12px;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 36px auto;
+    color: #fff;
 }
 
 /* Circular icons */
-.icon-right {
-  width: 90px;  /* Set size for the circular icon */
-  height: 90px; /* Set size for the circular icon */
-  border-radius: 50%;  /* Makes it circular */
-  background-color: #fff; /* Optional: set background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 140px;  /* Adjust to place it below the logo */
-  z-index: 2;
-}
-.logo {
-  width: 200px;  /* Increase width */
-  height: auto;  /* Keep the aspect ratio */
-}
 
-.card {
-  left: 10%; /* Move ProfileCard 20px to the left */
+.live-match-inner{
+  display: grid
+;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 200px;
+    width: 100%;
+    max-width: 575px;
+    margin-top: 30px;
 }
-.icon-right {
-  right: 35%; /* Position the right icon */
+.live-team1-wrap{
+  display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.live-team1-player{
+  display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-wrap{
+  position: relative;
+}
+.live-player-image{
+  display: flex
+;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 1px rgba(51, 51, 51, .3);
+    will-change: transform;
+}
+.image1{
+  vertical-align: middle;
+}
+.avatar-flag{
+  position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+}
+.player-serve{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+}
+.live-player-name{
+  line-height: 1.3em;
+  margin: 9px 0 12px 0;
+}
+.name1{
+  font-weight: 300;
+}
+.name2{
+  font-weight: 900;
+}
+.live-score-wrap{
+  
+  display: flex
+  ;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+.duration{
+  display: flex
+;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.complete-game-wrap{
+  display: flex
+;
+    flex-direction: column;
+    width: 100%;
+}
+.complete-game{
+  display: flex
+;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+}
+.game-score-team1{
+  background-color: #666;
+    border-radius: 50%;
+    padding: 6px;
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+.game-score-team2-winner{
+  background-color: #0179fe;
+  font-weight: 700;
+  background-color: #666;
+    border-radius: 50%;
+    padding: 6px;
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+.red-link{
+  background-color: #df2027;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 6px 35px 5px 35px;
+    border-radius: 46px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .35s ease-in-out;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+.side-bar-wrap{
+  flex-shrink: 0;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    width: 360px;
+    padding: 0;
+    margin: 0 0 0 auto;
+    display: none;
+}
+.side-bar-outer{
+  position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .3333333333333333), rgba(0, 0, 0, .6));
+}
+.nav-side-bar{
+  z-index: 2;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 24px 0 12px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, .2);
+    position: relative;
+}
+.nav-logo{
+  width: 100%;
+    height: 100%;
+}
+.router1{
+  display: flex
+;
+    width: 90px;
+    margin: 28px auto 0 auto;
+    border-radius: 0;
+    overflow: hidden;
+}
+.side-bar-inner{
+  padding: 24px 18px 36px 18px;
+    height: 82vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+}
+.side-bar-inner-scroll{
+  min-height: 1000px;
 }
