@@ -5,6 +5,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  flex-direction: column; /* Default to column layout for smaller screens */
 }
 
 /* Fixed Background Image */
@@ -32,12 +33,12 @@
 /* Left Content Section - Main Content */
 .content-left {
   display: flex;
-  width: 70%; /* Adjust width */
+  width: 70%; /* Default for larger screens */
   z-index: 3;
   height: 100vh;
   padding: 20px;
-  overflow: hidden; /* Prevent full section from scrolling */
-
+  overflow: hidden;
+  flex-direction: column; /* Adjust to column layout for small screens */
 }
 
 /* Scrollable Match Content */
@@ -46,22 +47,20 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* Allow only data above image to scroll */
+  overflow-y: auto;
   scrollbar-width: none;
-  
-
 }
 
 /* Right Content Section - Current Matches */
 .current-matches {
-  width: 30%; /* Adjust width */
+  width: 30%; /* Default for larger screens */
   height: 100vh;
   position: absolute;
   right: 0;
   top: 0;
   padding: 20px;
-  overflow-y: auto; /* Allow independent scrolling */
-  background: rgba(0, 0, 0, 0.6); /* Adds slight background to separate it */
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Match Info */
@@ -74,11 +73,7 @@
   align-items: center;
   justify-content: flex-start;
   margin: auto auto;
-
   color: #fff;
-}
-.live-match-title{
-  margin-bottom: -20px;
 }
 
 /* Player Details */
@@ -87,11 +82,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
+/* Match Layout */
 .live-match-inner {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,4 +188,81 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Mobile and Tablet Adjustments */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .content-left {
+    width: 100%; /* Make left content take full width */
+    height: auto;
+    padding: 10px;
+  }
+
+  .current-matches {
+    width: 100%; /* Make right content take full width */
+    position: relative;
+    top: auto;
+    height: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .live-match-inner {
+    flex-direction: row;
+    
+    gap: 20px; /* Decrease space between elements */
+  }
+
+  .player-side {
+    width: 100%; /* Full width for each player */
+  }
+
+  .score-side {
+    width: 100%; /* Full width for scoreboard */
+    margin-bottom: 20px;
+  }
+
+  .duration {
+    font-size: 18px; /* Smaller font size */
+    margin-bottom: 10px;
+  }
+
+  .red-link {
+    font-size: 1rem; /* Adjust font size */
+    padding: 6px 25px 5px 25px;
+  }
+}
+
+/* Further adjustments for very small screens (Mobile) */
+@media (max-width: 480px) {
+  .main {
+    height: auto;
+    padding: 5px;
+  }
+
+  .content-left {
+    padding: 5px;
+  }
+
+  .current-matches {
+    padding: 5px;
+  }
+
+  .live-match-inner {
+    gap: 10px; /* Smaller gap between elements */
+  }
+
+  .duration {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .red-link {
+    font-size: 0.9rem;
+    padding: 6px 15px 5px 15px;
+  }
 }

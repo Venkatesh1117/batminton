@@ -1,50 +1,95 @@
 .live-score-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2vw; /* Responsive padding */
+}
+
+/* Duration */
+.duration {
+  display: flex;
+  align-items: center;
+  font-size: 2vw; /* Scales with screen width */
+  font-weight: 700;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+
+/* Game Wrap */
+.complete-game-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px; /* Prevents it from becoming too wide */
+}
+
+/* Game Score */
+.complete-game {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.5vw; /* Adjust based on screen */
+  margin-top: 1.5vw;
+  gap: 1vw;
+}
+
+/* Score Circle */
+.game-score-team1,
+.game-score-team2-winner {
+  background-color: #666;
+  border-radius: 50%;
+  padding: 1vw;
+  width: 4vw; /* Scales with screen width */
+  height: 4vw;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 60px;
+  max-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+
+/* Winner's Score */
+.game-score-team2-winner {
+  background-color: #0179fe;
+  color: white;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
   .duration {
-    display: flex;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 18px;
+      font-size: 3vw;
   }
-  
-  .complete-game-wrap {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
   .complete-game {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-around;
-    text-align: center;
-    font-size: 18px;
-    margin-top: 12px;
-    gap: 10px;
+      font-size: 2vw;
+      gap: 5px;
   }
-  
   .game-score-team1,
   .game-score-team2-winner {
-    background-color: #666;
-    border-radius: 50%;
-    padding: 6px;
-    width: 46px;
-    height: 46px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+      width: 10vw;
+      height: 10vw;
+      font-size: 2vw;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .duration {
+      font-size: 4vw;
+  }
+  .complete-game {
+      font-size: 3vw;
+  }
+  .game-score-team1,
   .game-score-team2-winner {
-    background-color: #0179fe;
-    color: white;
+      width: 12vw;
+      height: 12vw;
+      font-size: 3vw;
   }
+}
