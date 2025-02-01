@@ -1,0 +1,50 @@
+.live-score-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .duration {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  
+  .complete-game-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .complete-game {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    gap: 10px;
+  }
+  
+  .game-score-team1,
+  .game-score-team2-winner {
+    background-color: #666;
+    border-radius: 50%;
+    padding: 6px;
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .game-score-team2-winner {
+    background-color: #0179fe;
+    color: white;
+  }

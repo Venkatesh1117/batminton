@@ -1,0 +1,153 @@
+.current-matches {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tournament-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tournament-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .order-play-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .order-play-btn span {
+    font-size: 12px;
+  }
+  
+  .live-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .no-matches {
+    font-size: 14px;
+    color: lightgray;
+  }
+  
+  .matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .match-item {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .court-label {
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  .match-time {
+    font-size: 14px;
+  }
+  
+  .match-status {
+    font-size: 14px;
+    font-weight: bold;
+  }.current-matches {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tournament-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tournament-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .order-play-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .order-play-btn span {
+    font-size: 12px;
+  }
+  
+  .live-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .no-matches {
+    font-size: 14px;
+    color: lightgray;
+  }
+  
+  .matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .match-item {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .court-label {
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  .match-time {
+    font-size: 14px;
+  }
+  
+  .match-status {
+    font-size: 14px;
+    font-weight: bold;
+  }
