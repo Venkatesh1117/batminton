@@ -13,8 +13,7 @@
   object-fit: cover;
 }
 
-/* Avatar Container */
-.live-player-image {
+.live-player-avatar{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +23,21 @@
   box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.3);
   position: relative;
   border: 4px solid #ffcc00; /* Yellow border */
+}
+.shuttlecock-icon {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font-size: 30px; /* Adjust size */
+  color: white; /* Make it stand out */
+  background: black;
+  border-radius: 50%;
+  padding: 2px;
+  z-index: 3;
+}
+/* Avatar Container */
+.live-player-image {
+
   overflow: hidden; /* Ensures only player image is clipped */
 }
 
@@ -77,6 +91,10 @@
 /* Mobile and Tablet Adjustments */
 @media (max-width: 768px) {
   /* Adjust Avatar size */
+  .live-player-avatar {
+    width: 15vw;
+    height: 15vw;
+  }
   .live-player-image {
     width: 15vw;
     height: 15vw;
@@ -102,10 +120,15 @@
 /* Small Mobile Screens */
 @media (max-width: 480px) {
   /* Adjust Avatar size */
+  .live-player-avatar {
+    width: 18vw;
+    height: 18vw;
+  }
   .live-player-image {
     width: 18vw;
     height: 18vw;
   }
+  
   .avatar-flag {
     width: 6vw;
     height: 6vw;

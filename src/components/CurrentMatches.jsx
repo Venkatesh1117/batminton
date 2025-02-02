@@ -1,7 +1,7 @@
 import React from "react";
 import "./CurrentMatches.css";
 
-const CurrentMatches = ({ matches }) => {
+const CurrentMatches = ({ matches = [], onCourtClick }) => {
   return (
     <div className="current-matches">
       {/* Tournament Logo & Name */}
@@ -26,20 +26,24 @@ const CurrentMatches = ({ matches }) => {
         ORDER OF PLAY <span>↗</span>
       </a>
 
-      {/* Live Matches Section */}
       <h4 className="live-title">Current Matches</h4>
       {matches.length === 0 ? (
         <p className="no-matches">Currently no live matches</p>
       ) : (
         <div className="matches-list">
-          {matches.map((match, index) => (
-            <div key={index} className="match-item">
-              <span className="court-label">Court {match.court}</span>
-              <span className="match-time">{match.time}</span>
-              <span className="match-status">{match.status}</span>
-              
-            </div>
-          ))}
+          {Array.isArray(matches) &&
+            matches.map((match, index) => (
+              <div
+                key={index}
+                className="match-item"
+                onClick={() => onCourtClick(match)}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="court-label">Court {match.court}</span>
+                <span className="match-time">{match.time}</span>
+                <span className="match-status">{match.status}</span>
+              </div>
+            ))}
         </div>
       )}
     </div>
