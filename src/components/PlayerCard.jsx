@@ -8,7 +8,11 @@ const PlayerCard = ({ player }) => {
       {/* Player Avatar */}
       <div className="live-player-avatar">
         <div className="live-player-image">
-          <img src={player.image} className="image1" alt="Player" />
+          <img 
+            src={player.image} 
+            className="image1" 
+            alt={`${player.name} ${player.surname}`} 
+          />
         </div>
 
         {/* Show Shuttlecock Icon Only If Player is Serving */}
@@ -16,7 +20,11 @@ const PlayerCard = ({ player }) => {
 
         {/* Flag Inside Avatar */}
         <div className="avatar-flag">
-          <img src={player.flag} className="flag1" alt="Flag" />
+          <img 
+            src={player.flag} 
+            className="flag1" 
+            alt={`${player.name}'s country flag`} 
+          />
         </div>
       </div>
 

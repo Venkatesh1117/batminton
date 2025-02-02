@@ -31,19 +31,48 @@ const CurrentMatches = ({ matches = [], onCourtClick }) => {
         <p className="no-matches">Currently no live matches</p>
       ) : (
         <div className="matches-list">
-          {Array.isArray(matches) &&
-            matches.map((match, index) => (
-              <div
-                key={index}
-                className="match-item"
-                onClick={() => onCourtClick(match)}
-                style={{ cursor: "pointer" }}
-              >
+          {matches.map((match, index) => (
+            <div
+              key={index}
+              className="match-item"
+              onClick={() => onCourtClick(match)}
+              style={{ cursor: "pointer" }}
+            >
+              {/* Court & Time */}
+              <div className="match-header">
                 <span className="court-label">Court {match.court}</span>
                 <span className="match-time">{match.time}</span>
                 <span className="match-status">{match.status}</span>
               </div>
-            ))}
+
+              {/* Team A vs Team B */}
+              <div className="match-teams">
+                <div className="team">
+                  <img
+                    src={match.teams[0].players[0].flag}
+                    alt="Team A Flag"
+                    className="team-flag"
+                  />
+                  <span className="team-name">
+                    {match.teams[0].players.map((p) => p.name).join(" & ")}
+                  </span>
+                </div>
+
+                <span className="vs-text">VS</span>
+
+                <div className="team">
+                  <img
+                    src={match.teams[1].players[0].flag}
+                    alt="Team B Flag"
+                    className="team-flag"
+                  />
+                  <span className="team-name">
+                    {match.teams[1].players.map((p) => p.name).join(" & ")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

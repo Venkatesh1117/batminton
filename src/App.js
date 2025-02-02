@@ -5,8 +5,7 @@ import TournamentLogo from "./components/TournamentLogo";
 import PlayerCard from "./components/PlayerCard";
 import ScoreBoard from "./components/ScoreBoard";
 import CurrentMatches from "./components/CurrentMatches";
-
-const API_URL = "https://dummyjson.com/c/36de-93a8-4aae-b379"; // Replace with actual API
+import { fetchMatches } from "./services/apiService"; // Import API function
 
 const scores = [
   { team1: 11, team2: 21 },
@@ -18,30 +17,17 @@ const App = () => {
   const [matches, setMatches] = useState([]); // Store API data
   const [selectedMatch, setSelectedMatch] = useState(null);
 
-  // Function to fetch and format matches
-  const fetchMatches = async () => {
-    try {
-      const response = await fetch(API_URL);
-      if (!response.ok) throw new Error("Failed to fetch matches");
-
-      const data = await response.json();
-
-      // Convert API response (object with court keys) to an array
-      const formattedMatches = Object.values(data); // Extract values from the object
-
-      setMatches(formattedMatches);
-      if (!selectedMatch || !formattedMatches.some((m) => m.court === selectedMatch.court)) {
-        setSelectedMatch(formattedMatches[0] || null);
-      }
-    } catch (error) {
-      console.error("Error fetching matches:", error);
-    }
-  };
-
-  // Fetch matches when the component mounts and refresh every 10 seconds
   useEffect(() => {
-    fetchMatches(); // Initial call
-    const interval = setInterval(fetchMatches, 10000); // Auto-refresh every 10 sec
+    const getMatches = async () => {
+      const fetchedMatches = await fetchMatches(); // Call API
+      setMatches(fetchedMatches);
+      if (!selectedMatch || !fetchedMatches.some((m) => m.court === selectedMatch?.court)) {
+        setSelectedMatch(fetchedMatches[0] || null);
+      }
+    };
+
+    getMatches(); // Initial call
+    const interval = setInterval(getMatches, 10000); // Auto-refresh every 10 sec
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [selectedMatch]);
 
@@ -60,21 +46,29 @@ const App = () => {
 
               {/* Players & Scoreboard Section */}
               <div className="live-match-inner">
-                <div className="player-side">
-                  {selectedMatch?.players?.map((player, index) => (
-                    <PlayerCard key={index} player={player} />
-                  ))}
-                </div>
+                {selectedMatch?.teams && selectedMatch.teams.length === 2 ? (
+                  <>
+                    {/* Team A Players */}
+                    <div className="player-side">
+                      {selectedMatch.teams[0].players.map((player, index) => (
+                        <PlayerCard key={`teamA-${index}`} player={player} />
+                      ))}
+                    </div>
 
-                <div className="score-side">
-                  <ScoreBoard scores={scores} duration="1:19" />
-                </div>
+                    <div className="score-side">
+                      <ScoreBoard scores={scores} duration="1:19" />
+                    </div>
 
-                <div className="player-side">
-                  {selectedMatch?.players?.map((player, index) => (
-                    <PlayerCard key={index} player={player} />
-                  ))}
-                </div>
+                    {/* Team B Players */}
+                    <div className="player-side">
+                      {selectedMatch.teams[1].players.map((player, index) => (
+                        <PlayerCard key={`teamB-${index}`} player={player} />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <p>No match selected</p>
+                )}
               </div>
 
               <a
