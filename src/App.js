@@ -82,7 +82,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="current-matches">
+      <div className="current-matches" >
         <CurrentMatches matches={matches} onCourtClick={setSelectedMatch} />
       </div>
     </div>

@@ -1,10 +1,8 @@
-/* Tournament Header */
+/* Default Styles for Large Screens */
 .tournament-header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
-
-/* Current Matches Container */
 .current-matches {
   display: flex;
   flex-direction: column;
@@ -20,14 +18,47 @@
   text-align: center;
   z-index: 1000;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Floating Menu Button (For Small Screens) */
+.toggle-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+/* Collapsed Mode (Hidden on Small Screens) */
+.current-matches.collapsed {
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Expanded Mode */
+.current-matches.open {
+  width: 320px;
+}
 .tournament-logo {
   width: 60px;
   height: auto;
   margin-bottom: 10px;
 }
-
 .order-play-btn {
   display: inline-block;
   background-color: red;
@@ -38,11 +69,9 @@
   font-weight: bold;
   margin: 10px 0;
 }
-
 .order-play-btn span {
   font-size: 12px;
 }
-
 /* Title for Live Matches */
 .live-title {
   font-size: 18px;
@@ -115,29 +144,23 @@
   color: white;
 }
 
+
 /* Responsive Styles */
-
-/* For Tablet and Mobile Screens */
 @media (max-width: 768px) {
-  .tournament-header {
-    display: none;
-  }
-  
-  .order-play-btn {
-    display: none;
-  }
-
   .current-matches {
-    width: 260px;
+    width: 250px;
     bottom: 15px;
     right: 15px;
     padding: 12px;
   }
 
-  .live-title {
-    font-size: 16px;
+  /* Hide tournament header & order of play button on mobile */
+  .tournament-header,
+  .order-play-btn {
+    display: none;
   }
 
+  /* Shrink match items */
   .match-item {
     padding: 8px;
     font-size: 12px;
@@ -155,6 +178,24 @@
   .vs-text {
     font-size: 12px;
   }
+  .toggle-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* For very small screens (below 480px) */
@@ -164,15 +205,6 @@
     bottom: 10px;
     right: 0;
     padding: 10px;
-  }
-
-  .live-title {
-    font-size: 14px;
-  }
-
-  .match-item {
-    padding: 6px;
-    font-size: 10px;
   }
 
   .team-flag {
@@ -186,5 +218,23 @@
 
   .vs-text {
     font-size: 10px;
+  }
+  .toggle-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   }
 }
